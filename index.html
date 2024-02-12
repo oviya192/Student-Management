@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <h2 style="text-align: center; font-size: 25px;"> Student Form</h2><br>
+            <form id="addForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br><br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age"><br><br>
+
+                <label>Gender:</label>
+                <input style="width: 5%;" type="radio" name="gender" value="male" id="male"> Male
+                <input style="width: 5%;" type="radio" name="gender" value="female" id="female"> Female <br><br>
+
+                <label for="course">Course:</label>
+                <select style="width: 80%;" id="course">
+                    <option value="MEAN Stack">MEAN Stack</option>
+                    <option value="MERN Stack">MERN Stack</option>
+                    <option value="LAMP Stack">LAMP Stack</option>
+                    <option value="Django Stack">Django Stack</option>
+                </select><br><br>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" required><br><br>
+
+                <button type="button" onclick="addStudent()">Add Student</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="wrapper2">
+
+
+            <h2 style="text-align: center; font-size: 25px;">Student Record</h2><br>
+            <table id="studentTable" border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Course</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function addStudent() {
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var course = document.getElementById('course').value;
+            var email = document.getElementById('email').value;
+
+            var table = document.getElementById('studentTable');
+            var row = table.insertRow(-1);
+
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+
+
+            cell1.innerHTML = name;
+            cell2.innerHTML = age;
+            cell3.innerHTML = gender;
+            cell4.innerHTML = course;
+            cell5.innerHTML = email;
+            cell6.innerHTML = '<button onclick="removeStudent(this)">Remove</button>';
+        }
+
+        function removeStudent(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+
+</body>
+
+</html>

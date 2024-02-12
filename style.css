@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: lightblue;
+}
+
+.wrapper{
+    height: auto;
+    width: 40%;
+    padding: 25px;
+}
+
+input{
+    width: 80%;
+    padding: 5px;
+}
+
+button{
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    background-color: pink;
+    border: none;
+    border-radius: 20px;
+}
+
+.container2{
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+    height: 40vh;
+}
+
+.wrapper2{
+    width: 80%;
+    padding: 15px;
+}
+
+.wrapper2 table{
+    width: 100%;
+    border: 1px solid black;
+}
+
